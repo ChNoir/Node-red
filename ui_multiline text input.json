@@ -1,0 +1,47 @@
+[
+    {
+        "id": "15d0d2e46981435c",
+        "type": "ui_template",
+        "z": "805c580241bb2718",
+        "g": "b75c8e8f8250104f",
+        "group": "de0704c895d59fa5",
+        "name": "Multiline Text Input",
+        "order": 7,
+        "width": 4,
+        "height": 3,
+        "format": "<style>\n\n    #textzone {\n        box-sizing: border-box;\n        padding : 5px ;\n        width : 100%;\n        outline : 0px solid #000000;\n        border : 1px solid #707070;\n      \n        \n    }\n\n</style>\n\n<script>\n    \n    document.getElementById('textzone').onkeyup = (event) =>{ \n        document.getElementById('bouton').click();\n    }\n  \n\n    this.scope.action = function() {     \n        return document.getElementById('textzone').textContent;\n    }\n</script>\n\n<!-- Conteneur -->\n<div id=\"textzone\" class=\"end\" ng-bind-html=\"msg.payload | trusted\" contenteditable=\"true\" ></div>\n\n<!-- output -->\n<md-button id = \"bouton\" style=\"display : none ;\" ng-click=\"send({payload:action()})\">  </md-button>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1810,
+        "y": 1580,
+        "wires": [
+            [
+                "0e342f77a725c426",
+                "ad8cb12bd264770b"
+            ]
+        ]
+    },
+    {
+        "id": "de0704c895d59fa5",
+        "type": "ui_group",
+        "name": "Forme",
+        "tab": "b54b20cf8cc54690",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b54b20cf8cc54690",
+        "type": "ui_tab",
+        "name": "Poulailler",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
